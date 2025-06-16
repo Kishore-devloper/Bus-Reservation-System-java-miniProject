@@ -1,6 +1,6 @@
+import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -40,25 +40,12 @@ public class Bookings {
 
     }
 
-    public boolean isAvailable(ArrayList<Bookings> bookings, ArrayList<Bus> bus) {
-        int cap = 0;
+    public boolean isAvailable() throws SQLException {
+        DbCon db = new DbCon();
+        BookingDob bookingDob = new BookingDob();
+        int cap = db.getCapcity(busNumber);
 
-        for(Bus bu : bus) {
-            if (bu.getBusNumber() == this.busNumber) {
-               cap = bu.getCapacity();
-
-
-            }
-        }
-        int booked = 0;
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        String thisBookingDate = sdf.format(this.date);
-        for(Bookings bu : bookings) {
-            String existingBookingDate = sdf.format(bu.date);
-            if(bu.busNumber == this.busNumber && existingBookingDate.equals(thisBookingDate)) {
-                booked++;
-                }
-            }
+        int booked = bookingDob.getBookCount(busNumber,date);
 
 
         return booked < cap ;
