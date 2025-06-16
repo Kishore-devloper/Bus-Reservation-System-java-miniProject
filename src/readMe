@@ -1,6 +1,16 @@
 ====================================================
 🚌 RK Travels - Bus Ticket Booking System
 ====================================================
+## 👨‍💻 About Me
+
+**Name**: Kishore
+**Education**: B.Tech Student
+**Skills**: Java, Frontend Development, Problem Solving
+**Project Goal**: To simulate a working ticket booking system with key features like:
+- Viewing available buses
+- Booking tickets
+- Cancelling booked tickets
+- Viewing all booked tickets
 
 A console-based Java application that allows users to:
 - View available buses
