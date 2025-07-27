@@ -1,4 +1,4 @@
-
+//Connection with booking table
 import java.sql.*;
 import java.util.Date;
 
